@@ -49,48 +49,14 @@ YieldX addresses these challenges through predictive analytics, weather intellig
 
 ## Technology Stack
 
-### Frontend
-
-- React
-- Vite
-- Bootstrap
-- Chart.js (`react-chartjs-2`)
-- Axios
-
-### Backend
-
-- Python
-- Flask
-- Flask Blueprints
-- Flask-SQLAlchemy
-- Flask-JWT-Extended
-- RESTful APIs
-
-### Machine Learning
-
-- XGBoost
-- Random Forest
-- Scikit-learn
-- Pandas
-- NumPy
-- Joblib
-
-### Database
-
-- SQLite (Development)
-- MySQL (Production)
-- SQLAlchemy ORM
-
-### External Services
-
-- OpenWeatherMap API
-- Mock Weather Fallback
-
-### DevOps
-
-- Docker
-- Git
-- GitHub
+| Category | Technologies |
+|:---------|:-------------|
+| **Frontend** | <img src="https://skillicons.dev/icons?i=react,vite,bootstrap" /> Chart.js (`react-chartjs-2`), Axios |
+| **Backend** | <img src="https://skillicons.dev/icons?i=python,flask" /> Flask Blueprints, Flask-SQLAlchemy, Flask-JWT-Extended, RESTful APIs |
+| **Machine Learning** | XGBoost, Random Forest, Scikit-learn, Pandas, NumPy, Joblib |
+| **Database** | <img src="https://skillicons.dev/icons?i=mysql,sqlite" /> SQLAlchemy ORM |
+| **External Services** | OpenWeatherMap API, Mock Weather Fallback |
+| **DevOps** | <img src="https://skillicons.dev/icons?i=docker,git,github" /> |
 
 ---
 
