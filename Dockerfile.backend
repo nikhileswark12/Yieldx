@@ -1,0 +1,44 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install system dependencies for MySQL and ML libraries
+RUN apt-get update && apt-get install -y \
+    gcc \
+    default-libmysqlclient-dev \
+    pkg-config \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy backend requirements
+COPY backend/requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# We also need ML requirements for inference
+COPY ml/requirements.txt ./ml_requirements.txt
+RUN pip install --no-cache-dir -r ml_requirements.txt
+
+# Copy backend and ML directories
+COPY backend/ ./backend/
+COPY ml/ ./ml/
+
+# Copy the yield dataset to train ML model during build
+COPY yield_df.csv ./
+
+# Pre-train the ML models so they are baked into the image
+RUN python ml/train.py
+
+# Set working directory to backend for running Flask
+WORKDIR /app/backend
+
+# Copy entrypoint script and make executable
+COPY backend/entrypoint.sh ./
+RUN chmod +x entrypoint.sh
+
+# Expose port
+EXPOSE 5000
+
+# Run entrypoint script
+ENTRYPOINT ["./entrypoint.sh"]

@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: yieldx_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME:-yieldx}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./backend/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - yieldx_network
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: yieldx_backend
+    restart: always
+    environment:
+      - DB_HOST=db
+      - DB_NAME=${DB_NAME:-yieldx}
+      - DB_USER=${DB_USER:-root}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - OPENWEATHER_API_KEY=${OPENWEATHER_API_KEY}
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - yieldx_network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: yieldx_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - yieldx_network
+
+volumes:
+  db_data:
+
+networks:
+  yieldx_network:
+    driver: bridge

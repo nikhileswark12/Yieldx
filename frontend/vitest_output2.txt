@@ -1,0 +1,1665 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.9 [39m[90mF:/WP/YieldX/frontend[39m
+
+ [31m❯[39m src/__tests__/unitConversion.test.js [2m([22m[2m3 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 19[2mms[22m[39m
+     [32m✓[39m should accurately convert acres to hectares[32m 5[2mms[22m[39m
+[31m     [31m×[31m should accurately convert hectares to acres[39m[32m 11[2mms[22m[39m
+     [32m✓[39m should handle round-trip accuracy within reasonable precision[32m 1[2mms[22m[39m
+ [31m❯[39m src/__tests__/Tooltip.test.jsx [2m([22m[2m3 tests[22m[2m | [22m[31m3 failed[39m[2m)[22m[32m 72[2mms[22m[39m
+[31m     [31m×[31m renders children correctly[39m[32m 54[2mms[22m[39m
+[31m     [31m×[31m shows tooltip on mouse enter and hides on mouse leave[39m[32m 9[2mms[22m[39m
+[31m     [31m×[31m is keyboard accessible (focus and escape)[39m[32m 5[2mms[22m[39m
+ [32m✓[39m src/__tests__/apiService.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m src/App.test.jsx [2m([22m[2m3 tests[22m[2m)[22m[33m 552[2mms[22m[39m
+ [31m❯[39m src/__tests__/Pages.test.jsx [2m([22m[2m11 tests[22m[2m | [22m[31m9 failed[39m[2m)[22m[33m 6414[2mms[22m[39m
+[31m     [31m×[31m renders DashboardPage without crashing[39m[33m 1171[2mms[22m[39m
+     [32m✓[39m renders PredictPage without crashing[32m 63[2mms[22m[39m
+[31m     [31m×[31m renders ResultsPage and displays doughnut chart correctly[39m[33m 1052[2mms[22m[39m
+[31m     [31m×[31m renders RecommendPage gating prompt when no history exists[39m[33m 1026[2mms[22m[39m
+[31m     [31m×[31m renders RecommendPage form when history exists[39m[33m 1023[2mms[22m[39m
+     [32m✓[39m renders HistoryPage without crashing[32m 17[2mms[22m[39m
+[31m     [31m×[31m renders AnalyticsPage without crashing[39m[33m 1012[2mms[22m[39m
+[31m     [31m×[31m renders AlertsPage without crashing[39m[32m 5[2mms[22m[39m
+[31m     [31m×[31m renders ProfilePage and submits password change[39m[33m 1018[2mms[22m[39m
+[31m     [31m×[31m renders LoginPage without crashing[39m[32m 11[2mms[22m[39m
+[31m     [31m×[31m renders RegisterPage without crashing[39m[32m 12[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 13 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders DashboardPage without crashing
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the text: /Recent Yield Trends/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m""[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mstyle[39m=[32m"display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"blur-text is-visible dashboard-heading"[39m
+        [36m>[39m
+          [0mField overview[0m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/predict"[39m
+          [33mstyle[39m=[32m"background-color: var(--color-accent); color: var(--color-accent-text); padding: 8px 16px; border-radius: var(--radius); font-weight: 600;"[39m
+        [36m>[39m
+          [0m+ New Prediction[0m
+        [36m</a>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"metric-cards"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"metric-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-label"[39m
+          [36m>[39m
+            [0mTotal Predictions[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-value data"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0m0[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"metric-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-label"[39m
+          [36m>[39m
+            [0mTop Crop[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-value data"[39m
+            [33mstyle[39m=[32m"text-transform: capitalize;"[39m
+          [36m>[39m
+            [0mN/A[0m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"metric-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-label"[39m
+          [36m>[39m
+            [0mAvg Yield (kg/acre)[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-value data"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0m0[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"dashboard-content"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"page-container"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mdata-testid[39m=[32m"mock-line-chart"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"page-container"[39m
+          [33mstyle[39m=[32m"display: flex; flex-direction: column;"[39m
+        [36m>[39m
+          [36m<h5[39m
+            [33mstyle[39m=[32m"margin-bottom: 16px;"[39m
+          [36m>[39m
+            [0mRecent Predictions[0m
+          [36m</h5>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"text-align: center; padding: 40px 0px; color: var(--color-text-muted);"[39m
+          [36m>[39m
+            [0mNo predictions yet[0m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m""[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mstyle[39m=[32m"display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"blur-text is-visible dashboard-heading"[39m
+        [36m>[39m
+          [0mField overview[0m
+        [36m</div>[39m
+        [36m<a[39m
+          [33mdata-discover[39m=[32m"true"[39m
+          [33mhref[39m=[32m"/predict"[39m
+          [33mstyle[39m=[32m"background-color: var(--color-accent); color: var(--color-accent-text); padding: 8px 16px; border-radius: var(--radius); font-weight: 600;"[39m
+        [36m>[39m
+          [0m+ New Prediction[0m
+        [36m</a>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"metric-cards"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"metric-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-label"[39m
+          [36m>[39m
+            [0mTotal Predictions[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-value data"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0m0[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"metric-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-label"[39m
+          [36m>[39m
+            [0mTop Crop[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-value data"[39m
+            [33mstyle[39m=[32m"text-transform: capitalize;"[39m
+          [36m>[39m
+            [0mN/A[0m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"metric-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-label"[39m
+          [36m>[39m
+            [0mAvg Yield (kg/acre)[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"metric-value data"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0m0[0m
+            [36m</span>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"dashboard-content"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"page-container"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mdata-testid[39m=[32m"mock-line-chart"[39m
+          [36m/>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"page-container"[39m
+          [33mstyle[39m=[32m"display: flex; flex-direction: column;"[39m
+        [36m>[39m
+          [36m<h5[39m
+            [33mstyle[39m=[32m"margin-bottom: 16px;"[39m
+          [36m>[39m
+            [0mRecent Predictions[0m
+          [36m</h5>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"text-align: center; padding: 40px 0px; color: var(--color-text-muted);"[39m
+          [36m>[39m
+            [0mNo predictions yet[0m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m86:33[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m67:25[22m[39m
+    [90m 65|[39m     apiService[33m.[39mgetAnalyticsTrends[33m.[39m[34mmockResolvedValueOnce[39m({ data[33m:[39m [] })[33m;[39m
+    [90m 66|[39m     [34mrenderWithRouter[39m([33m<[39m[33mDashboardPage[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m 67|[39m     expect(await screen.findByText(/Recent Yield Trends/i)).toBeInTheD…
+    [90m   |[39m                         [31m^[39m
+    [90m 68|[39m   })[33m;[39m
+    [90m 69|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders ResultsPage and displays doughnut chart correctly
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the text: /Confidence Score/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m""[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mstyle[39m=[32m"margin-bottom: 24px;"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mstyle[39m=[32m"margin-bottom: 16px;"[39m
+        [36m>[39m
+          [0mPrediction Results[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"height: 3px; border-radius: 2px; display: flex; overflow: hidden; width: 100%; background-color: var(--color-border); opacity: 1; animation: none; background-size: 200% 100%; background-image: none;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: var(--color-secondary); width: 30%; height: 100%; transition: width 0.3s ease;"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: var(--color-primary); width: 40%; height: 100%; transition: width 0.3s ease;"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: var(--color-accent); width: 15%; height: 100%; transition: width 0.3s ease;"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: var(--color-text); width: 15%; height: 100%; transition: width 0.3s ease;"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"results-grid"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"result-card"[39m
+          [33mstyle[39m=[32m"text-align: center;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"result-title"[39m
+          [36m>[39m
+            [0mPredicted Yield for [0m
+            [0mwheat[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yield-value data"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0m1311[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yield-unit"[39m
+          [36m>[39m
+            [0mkg / acre[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"info-row"[39m
+            [33mstyle[39m=[32m"text-align: left;"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"info-col"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [0mTotal Production (Estimated)[0m
+              [36m</p>[39m
+              [36m<h4[39m
+                [33mclass[39m=[32m"data"[39m
+              [36m>[39m
+                [0m16202.5[0m
+                [0m kg[0m
+              [36m</h4>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"info-col"[39m
+              [33mstyle[39m=[32m"text-align: right;"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [0mRisk Level[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"risk-badge visible"[39m
+                [33mstyle[39m=[32m"background-color: var(--color-primary); color: var(--color-surface);"[39m
+              [36m>[39m
+                [0mlow[0m
+                [0m Risk[0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"result-card"[39m
+          [33mstyle[39m=[32m"text-align: center;"[39m
+        [36m>[39m
+          [36m<h5[39m
+            [33mstyle[39m=[32m"margin-bottom: 24px;"[39m
+          [36m>[39m
+            [0mModel Confidence[0m
+          [36m</h5>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"width: 200px; margin: 0px auto;"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mdata-testid[39m=[32m"mock-doughnut-chart"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"data"[39m
+            [33mstyle[39m=[32m"margin-top: 24px;"[39m
+          [36m>[39m
+            [0m92[0m
+            [0m%[0m
+          [36m</h2>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"recs-weather-grid"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"result-card"[39m
+          [33mstyle[39m=[32m"padding: 0px;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"padding: 20px 24px; border-bottom: 1px solid var(--color-border); background-color: rgba(46, 125, 50, 0.03);"[39m
+          [36m>[39m
+            [36m<h5[39m
+              [33mstyle[39m=[32m"color: var(--color-primary); margin: 0px;"[39m
+            [36m>[39m
+              [0mActionable Recommendations[0m
+            [36m</h5>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m" animated-list-container is-visible"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"rec-item animated-list-item is-visible"[39m
+                [33mstyle[39m=[32m"--delay: 0s;"[39m
+              [36m>[39m
+                [0m💡 [0m
+                [0mMaintain current nitrogen levels.[0m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"rec-item animated-list-item is-visible"[39m
+                [33mstyle[39m=[32m"--delay: 0.1s;"[39m
+              [36m>[39m
+                [0m💡 [0m
+                [0mConsider drip irrigation to save water.[0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"result-card"[39m
+        [36m>[39m
+          [36m<h5[39m
+            [33mstyle[39m=[32m"display: flex; justify-content: space-between; align-items: center; margin: 0px;"[39m
+          [36m>[39m
+            [0mWeather Context[0m
+          [36m</h5>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"weather-grid"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"weather-box"[39m
+            [36m>[39m
+              [36m<h3[39m
+                [33mclass[39m=[32m"data"[39m
+              [36m>[39m
+                [0m28[0m
+                [0m°C[0m
+              [36m</h3>[39m
+              [36m<small>[39m
+                [0mTemperature[0m
+              [36m</small>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"weather-box"[39m
+            [36m>[39m
+              [36m<h3[39m
+                [33mclass[39m=[32m"data"[39m
+              [36m>[39m
+                [0m60[0m
+                [0m%[0m
+              [36m</h3>[39m
+...
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m""[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mstyle[39m=[32m"margin-bottom: 24px;"[39m
+      [36m>[39m
+        [36m<h2[39m
+          [33mstyle[39m=[32m"margin-bottom: 16px;"[39m
+        [36m>[39m
+          [0mPrediction Results[0m
+        [36m</h2>[39m
+        [36m<div[39m
+          [33mstyle[39m=[32m"height: 3px; border-radius: 2px; display: flex; overflow: hidden; width: 100%; background-color: var(--color-border); opacity: 1; animation: none; background-size: 200% 100%; background-image: none;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: var(--color-secondary); width: 30%; height: 100%; transition: width 0.3s ease;"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: var(--color-primary); width: 40%; height: 100%; transition: width 0.3s ease;"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: var(--color-accent); width: 15%; height: 100%; transition: width 0.3s ease;"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"background-color: var(--color-text); width: 15%; height: 100%; transition: width 0.3s ease;"[39m
+          [36m/>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"results-grid"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"result-card"[39m
+          [33mstyle[39m=[32m"text-align: center;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"result-title"[39m
+          [36m>[39m
+            [0mPredicted Yield for [0m
+            [0mwheat[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yield-value data"[39m
+          [36m>[39m
+            [36m<span>[39m
+              [0m1311[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"yield-unit"[39m
+          [36m>[39m
+            [0mkg / acre[0m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"info-row"[39m
+            [33mstyle[39m=[32m"text-align: left;"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"info-col"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [0mTotal Production (Estimated)[0m
+              [36m</p>[39m
+              [36m<h4[39m
+                [33mclass[39m=[32m"data"[39m
+              [36m>[39m
+                [0m16202.5[0m
+                [0m kg[0m
+              [36m</h4>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"info-col"[39m
+              [33mstyle[39m=[32m"text-align: right;"[39m
+            [36m>[39m
+              [36m<p>[39m
+                [0mRisk Level[0m
+              [36m</p>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"risk-badge visible"[39m
+                [33mstyle[39m=[32m"background-color: var(--color-primary); color: var(--color-surface);"[39m
+              [36m>[39m
+                [0mlow[0m
+                [0m Risk[0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"result-card"[39m
+          [33mstyle[39m=[32m"text-align: center;"[39m
+        [36m>[39m
+          [36m<h5[39m
+            [33mstyle[39m=[32m"margin-bottom: 24px;"[39m
+          [36m>[39m
+            [0mModel Confidence[0m
+          [36m</h5>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"width: 200px; margin: 0px auto;"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mdata-testid[39m=[32m"mock-doughnut-chart"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<h2[39m
+            [33mclass[39m=[32m"data"[39m
+            [33mstyle[39m=[32m"margin-top: 24px;"[39m
+          [36m>[39m
+            [0m92[0m
+            [0m%[0m
+          [36m</h2>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"recs-weather-grid"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"result-card"[39m
+          [33mstyle[39m=[32m"padding: 0px;"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mstyle[39m=[32m"padding: 20px 24px; border-bottom: 1px solid var(--color-border); background-color: rgba(46, 125, 50, 0.03);"[39m
+          [36m>[39m
+            [36m<h5[39m
+              [33mstyle[39m=[32m"color: var(--color-primary); margin: 0px;"[39m
+            [36m>[39m
+              [0mActionable Recommendations[0m
+            [36m</h5>[39m
+          [36m</div>[39m
+          [36m<div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m" animated-list-container is-visible"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"rec-item animated-list-item is-visible"[39m
+                [33mstyle[39m=[32m"--delay: 0s;"[39m
+              [36m>[39m
+                [0m💡 [0m
+                [0mMaintain current nitrogen levels.[0m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"rec-item animated-list-item is-visible"[39m
+                [33mstyle[39m=[32m"--delay: 0.1s;"[39m
+              [36m>[39m
+                [0m💡 [0m
+                [0mConsider drip irrigation to save water.[0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"result-card"[39m
+        [36m>[39m
+          [36m<h5[39m
+            [33mstyle[39m=[32m"display: flex; justify-content: space-between; align-items: center; margin: 0px;"[39m
+          [36m>[39m
+            [0mWeather Context[0m
+          [36m</h5>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"weather-grid"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"weather-box"[39m
+            [36m>[39m
+              [36m<h3[39m
+                [33mclass[39m=[32m"data"[39m
+              [36m>[39m
+                [0m28[0m
+                [0m°C[0m
+              [36m</h3>[39m
+              [36m<small>[39m
+                [0mTemperature[0m
+              [36m</small>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"weather-box"[39m
+            [36m>[39m
+              [36m<h3[39m
+                [33mclass[39m=[32m"data"[39m
+              [36m>[39m
+                [0m60[0m
+                [0m%[0m
+              [36m</h3>[39m
+...
+[90m [2m❯[22m waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m86:33[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m89:25[22m[39m
+    [90m 87|[39m     )[33m;[39m
+    [90m 88|[39m
+    [90m 89|[39m     expect(await screen.findByText(/Confidence Score/i)).toBeInTheDocu…
+    [90m   |[39m                         [31m^[39m
+    [90m 90|[39m     expect(screen.getByTestId('mock-doughnut-chart')).toBeInTheDocumen…
+    [90m 91|[39m   })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders RecommendPage gating prompt when no history exists
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: /No Prediction History Found/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mstyle[31m=[32m"max-width: 1200px; margin: 0px auto;"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mstyle[31m=[32m"text-align: center; padding: 60px 20px; border: 1px solid var(--color-border); border-radius: var(--radius); background-color: var(--color-surface);"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mstyle[31m=[32m"margin-bottom: 16px; color: var(--color-text);"[31m
+        [36m>[31m
+          [0mNo Soil Data Found[0m
+        [36m</h2>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"color: var(--color-text-muted); margin-bottom: 32px; font-size: 18px;"[31m
+        [36m>[31m
+          [0mComplete a yield prediction first so we can recommend crops based on your soil data.[0m
+        [36m</p>[31m
+        [36m<a[31m
+          [33mdata-discover[31m=[32m"true"[31m
+          [33mhref[31m=[32m"/predict"[31m
+          [33mstyle[31m=[32m"background-color: var(--color-primary); color: var(--color-surface); padding: 12px 24px; border-radius: var(--radius); text-decoration: none; font-weight: 600; display: inline-block;"[31m
+        [36m>[31m
+          [0mGo to Predict Page[0m
+        [36m</a>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mstyle[31m=[32m"max-width: 1200px; margin: 0px auto;"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mstyle[31m=[32m"text-align: center; padding: 60px 20px; border: 1px solid var(--color-border); border-radius: var(--radius); background-color: var(--color-surface);"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mstyle[31m=[32m"margin-bottom: 16px; color: var(--color-text);"[31m
+        [36m>[31m
+          [0mNo Soil Data Found[0m
+        [36m</h2>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"color: var(--color-text-muted); margin-bottom: 32px; font-size: 18px;"[31m
+        [36m>[31m
+          [0mComplete a yield prediction first so we can recommend crops based on your soil data.[0m
+        [36m</p>[31m
+        [36m<a[31m
+          [33mdata-discover[31m=[32m"true"[31m
+          [33mhref[31m=[32m"/predict"[31m
+          [33mstyle[31m=[32m"background-color: var(--color-primary); color: var(--color-surface); padding: 12px 24px; border-radius: var(--radius); text-decoration: none; font-weight: 600; display: inline-block;"[31m
+        [36m>[31m
+          [0mGo to Predict Page[0m
+        [36m</a>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m86:33[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m99:25[22m[39m
+    [90m 97|[39m
+    [90m 98|[39m     [90m// Should show gating message[39m
+    [90m 99|[39m     expect(await screen.findByText(/No Prediction History Found/i)).to…
+    [90m   |[39m                         [31m^[39m
+    [90m100|[39m   })[33m;[39m
+    [90m101|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders RecommendPage form when history exists
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: /Soil Parameters/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mstyle[31m=[32m"max-width: 1200px; margin: 0px auto;"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mstyle[31m=[32m"text-align: center; padding: 60px 20px; border: 1px solid var(--color-border); border-radius: var(--radius); background-color: var(--color-surface);"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mstyle[31m=[32m"margin-bottom: 16px; color: var(--color-text);"[31m
+        [36m>[31m
+          [0mNo Soil Data Found[0m
+        [36m</h2>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"color: var(--color-text-muted); margin-bottom: 32px; font-size: 18px;"[31m
+        [36m>[31m
+          [0mComplete a yield prediction first so we can recommend crops based on your soil data.[0m
+        [36m</p>[31m
+        [36m<a[31m
+          [33mdata-discover[31m=[32m"true"[31m
+          [33mhref[31m=[32m"/predict"[31m
+          [33mstyle[31m=[32m"background-color: var(--color-primary); color: var(--color-surface); padding: 12px 24px; border-radius: var(--radius); text-decoration: none; font-weight: 600; display: inline-block;"[31m
+        [36m>[31m
+          [0mGo to Predict Page[0m
+        [36m</a>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mstyle[31m=[32m"max-width: 1200px; margin: 0px auto;"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mstyle[31m=[32m"text-align: center; padding: 60px 20px; border: 1px solid var(--color-border); border-radius: var(--radius); background-color: var(--color-surface);"[31m
+      [36m>[31m
+        [36m<h2[31m
+          [33mstyle[31m=[32m"margin-bottom: 16px; color: var(--color-text);"[31m
+        [36m>[31m
+          [0mNo Soil Data Found[0m
+        [36m</h2>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"color: var(--color-text-muted); margin-bottom: 32px; font-size: 18px;"[31m
+        [36m>[31m
+          [0mComplete a yield prediction first so we can recommend crops based on your soil data.[0m
+        [36m</p>[31m
+        [36m<a[31m
+          [33mdata-discover[31m=[32m"true"[31m
+          [33mhref[31m=[32m"/predict"[31m
+          [33mstyle[31m=[32m"background-color: var(--color-primary); color: var(--color-surface); padding: 12px 24px; border-radius: var(--radius); text-decoration: none; font-weight: 600; display: inline-block;"[31m
+        [36m>[31m
+          [0mGo to Predict Page[0m
+        [36m</a>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m86:33[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m109:25[22m[39m
+    [90m107|[39m
+    [90m108|[39m     [90m// Should NOT show gating message, should show form[39m
+    [90m109|[39m     expect(await screen.findByText(/Soil Parameters/i)).toBeInTheDocum…
+    [90m   |[39m                         [31m^[39m
+    [90m110|[39m   })[33m;[39m
+    [90m111|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders AnalyticsPage without crashing
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: /Crop Yield Rankings/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"page-container"[31m
+      [33mstyle[31m=[32m"max-width: 1000px; margin: 0px auto;"[31m
+    [36m>[31m
+      [36m<h2[31m
+        [33mstyle[31m=[32m"margin-bottom: 8px;"[31m
+      [36m>[31m
+        [0mMulti-Region Analytics[0m
+      [36m</h2>[31m
+      [36m<p[31m
+        [33mstyle[31m=[32m"color: var(--color-text-muted); margin-bottom: 32px;"[31m
+      [36m>[31m
+        [0mCompare predicted crop yields across different crops in your region.[0m
+      [36m</p>[31m
+      [36m<div[31m
+        [33mstyle[31m=[32m"text-align: center; padding: 60px 20px; border: 1px solid var(--color-border); border-radius: var(--radius); background-color: var(--color-bg);"[31m
+      [36m>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"font-size: 18px; margin-bottom: 8px;"[31m
+        [36m>[31m
+          [0mNot enough prediction data in your region to generate analytics.[0m
+        [36m</p>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"color: var(--color-text-muted); font-size: 14px;"[31m
+        [36m>[31m
+          [0mMake some predictions to see analytics here.[0m
+        [36m</p>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"page-container"[31m
+      [33mstyle[31m=[32m"max-width: 1000px; margin: 0px auto;"[31m
+    [36m>[31m
+      [36m<h2[31m
+        [33mstyle[31m=[32m"margin-bottom: 8px;"[31m
+      [36m>[31m
+        [0mMulti-Region Analytics[0m
+      [36m</h2>[31m
+      [36m<p[31m
+        [33mstyle[31m=[32m"color: var(--color-text-muted); margin-bottom: 32px;"[31m
+      [36m>[31m
+        [0mCompare predicted crop yields across different crops in your region.[0m
+      [36m</p>[31m
+      [36m<div[31m
+        [33mstyle[31m=[32m"text-align: center; padding: 60px 20px; border: 1px solid var(--color-border); border-radius: var(--radius); background-color: var(--color-bg);"[31m
+      [36m>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"font-size: 18px; margin-bottom: 8px;"[31m
+        [36m>[31m
+          [0mNot enough prediction data in your region to generate analytics.[0m
+        [36m</p>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"color: var(--color-text-muted); font-size: 14px;"[31m
+        [36m>[31m
+          [0mMake some predictions to see analytics here.[0m
+        [36m</p>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m86:33[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m123:25[22m[39m
+    [90m121|[39m     apiService.getRegionalAnalytics.mockResolvedValueOnce({ data: [] }…
+    [90m122|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAnalyticsPage[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m123|[39m     expect(await screen.findByText(/Crop Yield Rankings/i)).toBeInTheD…
+    [90m   |[39m                         [31m^[39m
+    [90m124|[39m   })[33m;[39m
+    [90m125|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders AlertsPage without crashing
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: /Farm Alerts/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"page-container"[31m
+      [33mstyle[31m=[32m"max-width: 800px; margin: 0px auto;"[31m
+    [36m>[31m
+      [36m<h2[31m
+        [33mstyle[31m=[32m"margin-bottom: 8px;"[31m
+      [36m>[31m
+        [0mRisk Alerts System[0m
+      [36m</h2>[31m
+      [36m<p[31m
+        [33mstyle[31m=[32m"color: var(--color-text-muted); margin-bottom: 32px;"[31m
+      [36m>[31m
+        [0mReal-time alerts for pests, weather conditions, frost, and drought risks in your region.[0m
+      [36m</p>[31m
+      [36m<div[31m
+        [33mstyle[31m=[32m"text-align: center; padding: 60px 20px; border: 1px solid var(--color-border); border-radius: var(--radius); background-color: var(--color-bg);"[31m
+      [36m>[31m
+        [36m<p[31m
+          [33mstyle[31m=[32m"font-size: 18px; margin: 0px;"[31m
+        [36m>[31m
+          [0mNo active alerts for your region.[0m
+        [36m</p>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m129:19[22m[39m
+    [90m127|[39m   [34mit[39m([32m'renders AlertsPage without crashing'[39m[33m,[39m () [33m=>[39m {
+    [90m128|[39m     [34mrenderWithRouter[39m([33m<[39m[33mAlertsPage[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m129|[39m     [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/Farm Alerts/i[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m                   [31m^[39m
+    [90m130|[39m   })[33m;[39m
+    [90m131|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders ProfilePage and submits password change
+[31m[1mTestingLibraryElementError[22m[39m: Unable to find an element with the text: /Change Password/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m"max-width: 1000px; margin: 0px auto;"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"profile-grid"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"profile-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"profile-header"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-toggle"[39m
+            [36m>[39m
+              [0mEdit[0m
+            [36m</button>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"avatar"[39m
+            [36m>[39m
+              [0mT[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"profile-info"[39m
+          [36m>[39m
+            [36m<h4>[39m
+              [0mTest User[0m
+            [36m</h4>[39m
+            [36m<p>[39m
+              [0mtest@example.com[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"content-card"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<h3[39m
+              [33mstyle[39m=[32m"margin-bottom: 24px; color: var(--color-primary);"[39m
+            [36m>[39m
+              [0mPersonal Information[0m
+            [36m</h3>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"info-grid"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mFull Name[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mTest User[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mEmail Address[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mtest@example.com[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mPhone Number[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mAddress & Location[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mFarm Size (Acres)[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value data"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mFarming Experience (Years)[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value data"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+                [33mstyle[39m=[32m"grid-column: 1 / -1;"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mPreferred Crops[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mstyle[39m=[32m"max-width: 1000px; margin: 0px auto;"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"profile-grid"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"profile-card"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"profile-header"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn-toggle"[39m
+            [36m>[39m
+              [0mEdit[0m
+            [36m</button>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"avatar"[39m
+            [36m>[39m
+              [0mT[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"profile-info"[39m
+          [36m>[39m
+            [36m<h4>[39m
+              [0mTest User[0m
+            [36m</h4>[39m
+            [36m<p>[39m
+              [0mtest@example.com[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"content-card"[39m
+        [36m>[39m
+          [36m<div>[39m
+            [36m<h3[39m
+              [33mstyle[39m=[32m"margin-bottom: 24px; color: var(--color-primary);"[39m
+            [36m>[39m
+              [0mPersonal Information[0m
+            [36m</h3>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"info-grid"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mFull Name[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mTest User[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mEmail Address[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mtest@example.com[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mPhone Number[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mAddress & Location[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mFarm Size (Acres)[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value data"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mFarming Experience (Years)[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value data"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"info-box"[39m
+                [33mstyle[39m=[32m"grid-column: 1 / -1;"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-label"[39m
+                [36m>[39m
+                  [0mPreferred Crops[0m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"info-value"[39m
+                [36m>[39m
+                  [0mNot provided[0m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+[90m [2m❯[22m waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m86:33[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m138:25[22m[39m
+    [90m136|[39m
+    [90m137|[39m     [34mrenderWithRouter[39m([33m<[39m[33mProfilePage[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m138|[39m     expect(await screen.findByText(/Change Password/i)).toBeInTheDocum…
+    [90m   |[39m                         [31m^[39m
+    [90m139|[39m
+    [90m140|[39m     [90m// Find inputs[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders LoginPage without crashing
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: /Sign in/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"container mt-5"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"row justify-content-center"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"col-md-6 col-lg-4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"card shadow-sm"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"card-body p-4"[31m
+            [36m>[31m
+              [36m<h2[31m
+                [33mclass[31m=[32m"text-center mb-4 text-success fw-bold"[31m
+              [36m>[31m
+                [0mYieldX[0m
+              [36m</h2>[31m
+              [36m<h5[31m
+                [33mclass[31m=[32m"text-center mb-4"[31m
+              [36m>[31m
+                [0mLogin to your account[0m
+              [36m</h5>[31m
+              [36m<form[31m
+                [33maction[31m=[32m"#"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"mb-3"[31m
+                [36m>[31m
+                  [36m<label[31m
+                    [33mclass[31m=[32m"form-label"[31m
+                  [36m>[31m
+                    [0mEmail[0m
+                  [36m</label>[31m
+                  [36m<input[31m
+                    [33mclass[31m=[32m"form-control"[31m
+                    [33mname[31m=[32m"email"[31m
+                    [33mtype[31m=[32m"email"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"mb-4"[31m
+                [36m>[31m
+                  [36m<label[31m
+                    [33mclass[31m=[32m"form-label"[31m
+                  [36m>[31m
+                    [0mPassword[0m
+                  [36m</label>[31m
+                  [36m<input[31m
+                    [33mclass[31m=[32m"form-control"[31m
+                    [33mname[31m=[32m"password"[31m
+                    [33mtype[31m=[32m"password"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                [36m</div>[31m
+                [36m<button[31m
+                  [33mclass[31m=[32m"btn btn-success w-100 py-2"[31m
+                  [33mtype[31m=[32m"submit"[31m
+                [36m>[31m
+                  [0mLogin[0m
+                [36m</button>[31m
+              [36m</form>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"text-center mt-3"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"mb-0"[31m
+                [36m>[31m
+                  [0mDon't have an account? [0m
+                  [36m<a[31m
+                    [33mclass[31m=[32m"text-success text-decoration-none"[31m
+                    [33mdata-discover[31m=[32m"true"[31m
+                    [33mhref[31m=[32m"/register"[31m
+                  [36m>[31m
+                    [0mRegister here[0m
+                  [36m</a>[31m
+                [36m</p>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m160:19[22m[39m
+    [90m158|[39m   [34mit[39m([32m'renders LoginPage without crashing'[39m[33m,[39m () [33m=>[39m {
+    [90m159|[39m     [34mrenderWithRouter[39m([33m<[39m[33mLoginPage[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m160|[39m     [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/Sign in/i[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m                   [31m^[39m
+    [90m161|[39m   })[33m;[39m
+    [90m162|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Pages.test.jsx[2m > [22mPages Render and Interaction Tests[2m > [22mrenders RegisterPage without crashing
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: /Create your account/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"container mt-5"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"row justify-content-center"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"col-md-6 col-lg-5"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"card shadow-sm"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"card-body p-4"[31m
+            [36m>[31m
+              [36m<h2[31m
+                [33mclass[31m=[32m"text-center mb-4 text-success fw-bold"[31m
+              [36m>[31m
+                [0mYieldX[0m
+              [36m</h2>[31m
+              [36m<h5[31m
+                [33mclass[31m=[32m"text-center mb-4"[31m
+              [36m>[31m
+                [0mCreate a new account[0m
+              [36m</h5>[31m
+              [36m<form[31m
+                [33maction[31m=[32m"#"[31m
+              [36m>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"mb-3"[31m
+                [36m>[31m
+                  [36m<label[31m
+                    [33mclass[31m=[32m"form-label"[31m
+                  [36m>[31m
+                    [0mFull Name[0m
+                  [36m</label>[31m
+                  [36m<input[31m
+                    [33mclass[31m=[32m"form-control"[31m
+                    [33mname[31m=[32m"name"[31m
+                    [33mtype[31m=[32m"text"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"mb-3"[31m
+                [36m>[31m
+                  [36m<label[31m
+                    [33mclass[31m=[32m"form-label"[31m
+                  [36m>[31m
+                    [0mEmail[0m
+                  [36m</label>[31m
+                  [36m<input[31m
+                    [33mclass[31m=[32m"form-control"[31m
+                    [33mname[31m=[32m"email"[31m
+                    [33mtype[31m=[32m"email"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                [36m</div>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"mb-4"[31m
+                [36m>[31m
+                  [36m<label[31m
+                    [33mclass[31m=[32m"form-label"[31m
+                  [36m>[31m
+                    [0mPassword[0m
+                  [36m</label>[31m
+                  [36m<input[31m
+                    [33mclass[31m=[32m"form-control"[31m
+                    [33mname[31m=[32m"password"[31m
+                    [33mtype[31m=[32m"password"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                [36m</div>[31m
+                [36m<button[31m
+                  [33mclass[31m=[32m"btn btn-success w-100 py-2"[31m
+                  [33mtype[31m=[32m"submit"[31m
+                [36m>[31m
+                  [0mRegister[0m
+                [36m</button>[31m
+              [36m</form>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"text-center mt-3"[31m
+              [36m>[31m
+                [36m<p[31m
+                  [33mclass[31m=[32m"mb-0"[31m
+                [36m>[31m
+                  [0mAlready have an account? [0m
+                  [36m<a[31m
+                    [33mclass[31m=[32m"text-success text-decoration-none"[31m
+                    [33mdata-discover[31m=[32m"true"[31m
+                    [33mhref[31m=[32m"/login"[31m
+                  [36m>[31m
+                    [0mLogin here[0m
+                  [36m</a>[31m
+                [36m</p>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/__tests__/Pages.test.jsx:[2m166:19[22m[39m
+    [90m164|[39m   [34mit[39m([32m'renders RegisterPage without crashing'[39m[33m,[39m () [33m=>[39m {
+    [90m165|[39m     [34mrenderWithRouter[39m([33m<[39m[33mRegisterPage[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m166|[39m     expect(screen.getByText(/Create your account/i)).toBeInTheDocument…
+    [90m   |[39m                   [31m^[39m
+    [90m167|[39m   })[33m;[39m
+    [90m168|[39m })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Tooltip.test.jsx[2m > [22mTooltip Component[2m > [22mrenders children correctly
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: Hover Me. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"tooltip-container"[31m
+      [33mstyle[31m=[32m"position: relative; display: inline-block; margin-left: 6px; cursor: help;"[31m
+      [33mtabindex[31m=[32m"0"[31m
+    [36m>[31m
+      [36m<svg[31m
+        [33mclass[31m=[32m"icon icon-tabler icon-tabler-info-circle"[31m
+        [33mfill[31m=[32m"none"[31m
+        [33mheight[31m=[32m"14"[31m
+        [33mstroke[31m=[32m"currentColor"[31m
+        [33mstroke-linecap[31m=[32m"round"[31m
+        [33mstroke-linejoin[31m=[32m"round"[31m
+        [33mstroke-width[31m=[32m"2"[31m
+        [33mviewBox[31m=[32m"0 0 24 24"[31m
+        [33mwidth[31m=[32m"14"[31m
+        [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+      [36m>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M0 0h24v24H0z"[31m
+          [33mfill[31m=[32m"none"[31m
+          [33mstroke[31m=[32m"none"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M12 9h.01"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M11 12h1v4h1"[31m
+        [36m/>[31m
+      [36m</svg>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/__tests__/Tooltip.test.jsx:[2m10:19[22m[39m
+    [90m  8|[39m   [34mit[39m([32m'renders children correctly'[39m[33m,[39m () [33m=>[39m {
+    [90m  9|[39m     render(<Tooltip text="Test Tooltip"><button>Hover Me</button></Too…
+    [90m 10|[39m     [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m'Hover Me'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   |[39m                   [31m^[39m
+    [90m 11|[39m   })[33m;[39m
+    [90m 12|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Tooltip.test.jsx[2m > [22mTooltip Component[2m > [22mshows tooltip on mouse enter and hides on mouse leave
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: Hover Me. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"tooltip-container"[31m
+      [33mstyle[31m=[32m"position: relative; display: inline-block; margin-left: 6px; cursor: help;"[31m
+      [33mtabindex[31m=[32m"0"[31m
+    [36m>[31m
+      [36m<svg[31m
+        [33mclass[31m=[32m"icon icon-tabler icon-tabler-info-circle"[31m
+        [33mfill[31m=[32m"none"[31m
+        [33mheight[31m=[32m"14"[31m
+        [33mstroke[31m=[32m"currentColor"[31m
+        [33mstroke-linecap[31m=[32m"round"[31m
+        [33mstroke-linejoin[31m=[32m"round"[31m
+        [33mstroke-width[31m=[32m"2"[31m
+        [33mviewBox[31m=[32m"0 0 24 24"[31m
+        [33mwidth[31m=[32m"14"[31m
+        [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+      [36m>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M0 0h24v24H0z"[31m
+          [33mfill[31m=[32m"none"[31m
+          [33mstroke[31m=[32m"none"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M12 9h.01"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M11 12h1v4h1"[31m
+        [36m/>[31m
+      [36m</svg>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/__tests__/Tooltip.test.jsx:[2m20:33[22m[39m
+    [90m 18|[39m
+    [90m 19|[39m     [90m// Trigger mouse enter[39m
+    [90m 20|[39m     fireEvent[33m.[39m[34mmouseEnter[39m(screen[33m.[39m[34mgetByText[39m([32m'Hover Me'[39m))[33m;[39m
+    [90m   |[39m                                 [31m^[39m
+    [90m 21|[39m
+    [90m 22|[39m     [90m// Now visible[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/Tooltip.test.jsx[2m > [22mTooltip Component[2m > [22mis keyboard accessible (focus and escape)
+[31m[1mTestingLibraryElementError[22m: Unable to find an element with the text: Focus Me. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"tooltip-container"[31m
+      [33mstyle[31m=[32m"position: relative; display: inline-block; margin-left: 6px; cursor: help;"[31m
+      [33mtabindex[31m=[32m"0"[31m
+    [36m>[31m
+      [36m<svg[31m
+        [33mclass[31m=[32m"icon icon-tabler icon-tabler-info-circle"[31m
+        [33mfill[31m=[32m"none"[31m
+        [33mheight[31m=[32m"14"[31m
+        [33mstroke[31m=[32m"currentColor"[31m
+        [33mstroke-linecap[31m=[32m"round"[31m
+        [33mstroke-linejoin[31m=[32m"round"[31m
+        [33mstroke-width[31m=[32m"2"[31m
+        [33mviewBox[31m=[32m"0 0 24 24"[31m
+        [33mwidth[31m=[32m"14"[31m
+        [33mxmlns[31m=[32m"http://www.w3.org/2000/svg"[31m
+      [36m>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M0 0h24v24H0z"[31m
+          [33mfill[31m=[32m"none"[31m
+          [33mstroke[31m=[32m"none"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M12 9h.01"[31m
+        [36m/>[31m
+        [36m<path[31m
+          [33md[31m=[32m"M11 12h1v4h1"[31m
+        [36m/>[31m
+      [36m</svg>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2m❯[22m Object.getElementError node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m76:38[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m52:17[22m[39m
+[90m [2m❯[22m node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2m❯[22m src/__tests__/Tooltip.test.jsx:[2m40:28[22m[39m
+    [90m 38|[39m
+    [90m 39|[39m     [90m// Focus the trigger[39m
+    [90m 40|[39m     [35mconst[39m trigger [33m=[39m screen[33m.[39m[34mgetByText[39m([32m'Focus Me'[39m)[33m.[39mparentElement[33m;[39m
+    [90m   |[39m                            [31m^[39m
+    [90m 41|[39m     fireEvent[33m.[39m[34mfocus[39m(trigger)[33m;[39m
+    [90m 42|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/13]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/__tests__/unitConversion.test.js[2m > [22mUnit Conversion Utils[2m > [22mshould accurately convert hectares to acres
+[31m[1mAssertionError[22m: expected 2.4710516301527603 to be 2.47105 // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 2.47105[39m
+[31m+ 2.4710516301527603[39m
+
+[36m [2m❯[22m src/__tests__/unitConversion.test.js:[2m11:32[22m[39m
+    [90m  9|[39m
+    [90m 10|[39m   [34mit[39m([32m'should accurately convert hectares to acres'[39m[33m,[39m () [33m=>[39m {
+    [90m 11|[39m     [34mexpect[39m([34mhectaresToAcres[39m([34m1[39m))[33m.[39m[34mtoBe[39m([34m2.47105[39m)[33m;[39m
+    [90m   |[39m                                [31m^[39m
+    [90m 12|[39m     [34mexpect[39m([34mhectaresToAcres[39m([34m5[39m))[33m.[39m[34mtoBe[39m([34m12.35525[39m)[33m;[39m
+    [90m 13|[39m   })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/13]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (5)[39m
+[2m      Tests [22m [1m[31m13 failed[39m[22m[2m | [22m[1m[32m9 passed[39m[22m[90m (22)[39m
+[2m   Start at [22m 23:25:01
+[2m   Duration [22m 70.60s[2m (transform 22.77s, setup 84.33s, import 52.38s, tests 7.06s, environment 137.85s)[22m
+

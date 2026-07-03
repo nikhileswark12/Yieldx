@@ -1,0 +1,25 @@
+:root {
+  --color-bg: #F8FAF5;
+  --color-surface: #FFFFFF;
+  --color-text: #263238;
+  --color-text-muted: #5B6B5D;
+  --color-primary: #2E7D32;
+  --color-primary-hover: #66BB6A;
+  --color-primary-text-on-hover: #1B3D1D;
+  --color-secondary: #66BB6A;
+  --color-accent: #F9A825;
+  --color-accent-text: #3D2A00;
+  --color-danger: #E53935;
+  --color-warning: #FF9800;
+  --color-border: #DCE5D8;
+  --color-sidebar-bg: #2E7D32;
+  --color-sidebar-text: #FFFFFF;
+  --color-sidebar-text-muted: #DCEFDC;
+  --color-sidebar-item-hover-bg: rgba(255,255,255,0.15);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius: 8px;
+}
