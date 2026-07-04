@@ -99,8 +99,13 @@ def update_profile():
     user.name = data.get('name', user.name)
     user.phone = data.get('phone', user.phone)
     user.address_line = data.get('address_line', user.address_line)
-    user.state = data.get('state', user.state)
-    user.district = data.get('district', user.district)
+    
+    # Trim and normalize state and district to prevent silent splitting of regions
+    state = data.get('state')
+    user.state = state.strip() if isinstance(state, str) else state
+    
+    district = data.get('district')
+    user.district = district.strip() if isinstance(district, str) else district
     
     if 'profile_pic' in data:
         user.profile_pic = data['profile_pic']

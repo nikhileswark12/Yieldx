@@ -42,15 +42,15 @@ def get_region_analytics():
     # We join Prediction and User to get the region info
     query = db.session.query(
         Prediction.crop_type,
-        User.state,
-        User.district,
         func.avg(Prediction.predicted_yield).label('avg_yield')
     ).join(User, Prediction.user_id == User.id)
     
     if user.state:
-        query = query.filter(User.state == user.state)
+        query = query.filter(User.state.ilike(user.state))
+    if user.district:
+        query = query.filter(User.district.ilike(user.district))
         
-    results = query.group_by(Prediction.crop_type, User.state, User.district).all()
+    results = query.group_by(Prediction.crop_type).all()
     
     # If no real data, provide some dummy comparative data for demo
     if not results:
@@ -60,7 +60,7 @@ def get_region_analytics():
             {"crop_type": "cotton", "avg_yield": 1500.8, "state": user.state or "maharashtra", "district": user.district or "pune"}
         ]
     else:
-        data = [{"crop_type": r.crop_type, "state": r.state, "district": r.district, "avg_yield": r.avg_yield} for r in results]
+        data = [{"crop_type": r.crop_type, "state": user.state, "district": user.district, "avg_yield": r.avg_yield} for r in results]
         
     return jsonify({"data": data}), 200
 

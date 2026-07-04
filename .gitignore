@@ -36,3 +36,32 @@ Thumbs.db
 # Database
 *.sqlite3
 *.db
+
+# QA & Testing Artifacts
+qa_artifacts/
+qa_screenshots/
+
+# Test logs & Output files
+backend/final_pytest.txt
+backend/pytest_final_run.txt
+backend/pytest_output.txt
+backend/pytest_report.txt
+backend/pytest_report_cmd.txt
+frontend/current_vitest_output.txt
+frontend/final_vitest2.txt
+frontend/final_vitest_clean.txt
+frontend/final_vitest_output.txt
+frontend/vitest_final_run.txt
+frontend/vitest_output.txt
+frontend/vitest_output2.txt
+frontend/vitest_report_cmd.txt
+frontend/vitest_results_final.txt
+frontend/vitest_run1.txt
+
+# Database backups
+backend/yieldx.db.bak
+
+# Temporary files
+temp.csv
+image.jpg
+
