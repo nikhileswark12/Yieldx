@@ -51,48 +51,74 @@ YieldX addresses these challenges through predictive analytics, weather intellig
 
 ## Technology Stack
 
-### Frontend
+| Category | Technologies |
+|:---------|:-------------|
+| **Frontend** | <img src="https://skillicons.dev/icons?i=react,vite" /> Chart.js (`react-chartjs-2`), Axios, Formik, Yup, custom CSS design system |
+| **Backend** | <img src="https://skillicons.dev/icons?i=python,flask" /> Flask Blueprints, Flask-SQLAlchemy, Flask-JWT-Extended, Flask-Limiter, Flask-Migrate, RESTful APIs |
+| **Machine Learning** | XGBoost, Random Forest, Scikit-learn, Pandas, NumPy, Joblib |
+| **Database** | <img src="https://skillicons.dev/icons?i=mysql,sqlite" /> SQLAlchemy ORM, Alembic migrations |
+| **External Services** | OpenWeatherMap API, Google Maps Geocoding API, IPInfo API, Mock Weather Fallback |
+| **Testing** | Pytest (backend), Vitest + React Testing Library (frontend) |
+| **DevOps** | <img src="https://skillicons.dev/icons?i=docker,git,github" /> |
 
-- React
-- Vite
-- Bootstrap
-- Chart.js (`react-chartjs-2`)
-- Axios
+---
 
-### Backend
+## Setup & Installation
 
-- Python
-- Flask
-- Flask Blueprints
-- Flask-SQLAlchemy
-- Flask-JWT-Extended
-- RESTful APIs
+### Prerequisites
 
-### Machine Learning
+- Python 3.9+
+- Node.js 18+
+- MySQL 8.0+ or Docker Desktop
+- OpenWeatherMap API Key (Free tier)
 
-- XGBoost
-- Random Forest
-- Scikit-learn
-- Pandas
-- NumPy
-- Joblib
+### Docker Setup (Recommended)
 
-### Database
+1. Clone the repository and navigate to the project root.
+2. Copy `.env.example` to `.env` and fill in your credentials:
+   ```bash
+   cp .env.example .env
+   ```
+3. Run the following command to start all services (MySQL, Flask Backend, React Frontend via Nginx):
+   ```bash
+   docker-compose up --build -d
+   ```
+4. Access the application at `http://localhost:80` (or `http://localhost:5173` depending on port mappings).
 
-- SQLite (Development)
-- MySQL (Production)
-- SQLAlchemy ORM
+### Manual Setup
 
-### External Services
+#### 1. Database
+1. Start your local MySQL server.
+2. Create the database and load the schema:
+   ```bash
+   mysql -u root -p -e 'CREATE DATABASE yieldx;'
+   mysql -u root -p yieldx < backend/schema.sql
+   ```
 
-- OpenWeatherMap API
-- Mock Weather Fallback
+#### 2. Backend (Flask)
+1. Navigate to the `backend` directory.
+2. Create a virtual environment and activate it.
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Start the Flask server:
+   ```bash
+   python run.py
+   ```
 
-### DevOps
+#### 3. Machine Learning Pipeline
+1. Navigate to the `ml` directory.
+2. Create a virtual environment, activate it, and install dependencies (`pip install -r requirements.txt`).
+3. Run the training script to generate the models:
+   ```bash
+   python train.py
+   ```
 
-- Docker
-- Git
-- GitHub
+#### 4. Frontend (React)
+1. Navigate to the `frontend` directory.
+2. Install dependencies (`npm install`).
+3. Start the Vite development server (`npm run dev`).
 
 ---
 
