@@ -33,64 +33,92 @@ YieldX addresses these challenges through predictive analytics, weather intellig
 
 ## Key Features
 
-- Secure JWT-based authentication
-- AI-powered crop yield prediction
-- Crop recommendation engine
-- Weather forecast integration
+- Secure JWT-based authentication with rate-limited login and registration endpoints
+- AI-powered crop yield prediction with server-side input validation
+- Crop recommendation engine, gated behind a completed yield prediction so recommendations are always grounded in real soil data
+- Weather forecast integration with seasonal-average fallback
 - Historical prediction tracking
-- Interactive analytics dashboard
+- Interactive, per-crop analytics dashboard with region-aware benchmarking
 - Confidence score generation
 - Risk level analysis
-- Regional and seasonal analytics
+- Regional and seasonal analytics, verified against case-sensitivity and multi-user aggregation edge cases
+- Farmer-facing measurements in acres, converted internally to hectares for the ML pipeline
+- Guided input tooltips explaining soil parameters and typical agronomic ranges
 - RESTful API architecture
-- Responsive web interface
+- Responsive web interface with a custom design system (no UI framework)
 
 ---
 
 ## Technology Stack
 
-### Frontend
+| Category | Technologies |
+|:---------|:-------------|
+| **Frontend** | <img src="https://skillicons.dev/icons?i=react,vite" /> Chart.js (`react-chartjs-2`), Axios, Formik, Yup, custom CSS design system |
+| **Backend** | <img src="https://skillicons.dev/icons?i=python,flask" /> Flask Blueprints, Flask-SQLAlchemy, Flask-JWT-Extended, Flask-Limiter, Flask-Migrate, RESTful APIs |
+| **Machine Learning** | XGBoost, Random Forest, Scikit-learn, Pandas, NumPy, Joblib |
+| **Database** | <img src="https://skillicons.dev/icons?i=mysql,sqlite" /> SQLAlchemy ORM, Alembic migrations |
+| **External Services** | OpenWeatherMap API, Google Maps Geocoding API, IPInfo API, Mock Weather Fallback |
+| **Testing** | Pytest (backend), Vitest + React Testing Library (frontend) |
+| **DevOps** | <img src="https://skillicons.dev/icons?i=docker,git,github" /> |
 
-- React
-- Vite
-- Bootstrap
-- Chart.js (`react-chartjs-2`)
-- Axios
+---
 
-### Backend
+## Setup & Installation
 
-- Python
-- Flask
-- Flask Blueprints
-- Flask-SQLAlchemy
-- Flask-JWT-Extended
-- RESTful APIs
+### Prerequisites
 
-### Machine Learning
+- Python 3.9+
+- Node.js 18+
+- MySQL 8.0+ or Docker Desktop
+- OpenWeatherMap API Key (Free tier)
 
-- XGBoost
-- Random Forest
-- Scikit-learn
-- Pandas
-- NumPy
-- Joblib
+### Docker Setup (Recommended)
 
-### Database
+1. Clone the repository and navigate to the project root.
+2. Copy `.env.example` to `.env` and fill in your credentials:
+   ```bash
+   cp .env.example .env
+   ```
+3. Run the following command to start all services (MySQL, Flask Backend, React Frontend via Nginx):
+   ```bash
+   docker-compose up --build -d
+   ```
+4. Access the application at `http://localhost:80` (or `http://localhost:5173` depending on port mappings).
 
-- SQLite (Development)
-- MySQL (Production)
-- SQLAlchemy ORM
+### Manual Setup
 
-### External Services
+#### 1. Database
+1. Start your local MySQL server.
+2. Create the database and load the schema:
+   ```bash
+   mysql -u root -p -e 'CREATE DATABASE yieldx;'
+   mysql -u root -p yieldx < backend/schema.sql
+   ```
 
-- OpenWeatherMap API
-- Mock Weather Fallback
+#### 2. Backend (Flask)
+1. Navigate to the `backend` directory.
+2. Create a virtual environment and activate it.
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Start the Flask server:
+   ```bash
+   python run.py
+   ```
 
-### DevOps
+#### 3. Machine Learning Pipeline
+1. Navigate to the `ml` directory.
+2. Create a virtual environment, activate it, and install dependencies (`pip install -r requirements.txt`).
+3. Run the training script to generate the models:
+   ```bash
+   python train.py
+   ```
 
-- Docker
-- Git
-- GitHub
+#### 4. Frontend (React)
+1. Navigate to the `frontend` directory.
+2. Install dependencies (`npm install`).
+3. Start the Vite development server (`npm run dev`).
 
 ---
 
@@ -98,14 +126,57 @@ YieldX addresses these challenges through predictive analytics, weather intellig
 
 YieldX follows a modular three-tier architecture.
 
-- React + Vite provides the client-side user interface.
-- Flask REST APIs handle authentication, business logic, and communication with the machine learning engine.
-- JWT authentication secures all protected endpoints.
-- XGBoost and Random Forest models perform crop yield prediction and recommendation.
-- SQLAlchemy manages persistent data using SQLite during development and MySQL for production.
+- React + Vite provides the client-side user interface, styled with a custom "Modern Agriculture" design system rather than a UI framework.
+- Flask REST APIs handle authentication, business logic, rate limiting, and communication with the machine learning engine.
+- JWT authentication secures all protected endpoints, with brute-force protection via rate limiting on login and registration.
+- XGBoost and Random Forest models perform crop yield prediction and recommendation; trained models are cached in memory after first load rather than reloaded from disk on every request.
+- SQLAlchemy manages persistent data using SQLite during development and MySQL for production, with schema evolution handled by Flask-Migrate/Alembic.
 - Weather information is retrieved through the OpenWeatherMap API with automatic fallback to mock weather data when required.
 
 This architecture enables scalability, maintainability, and independent evolution of each system component.
+
+---
+
+## Database Architecture
+
+### Entity Relationship Diagram
+```mermaid
+erDiagram
+    USER ||--o{ PREDICTION : makes
+    USER ||--o{ SAVED_LOCATION : has
+    USER ||--o{ SOIL_PROFILE : has
+    USER ||--o{ ALERT : receives
+    PREDICTION ||--o{ CROP_RECOMMENDATION : generates
+    
+    USER {
+        int id PK
+        string name
+        string email
+        string password_hash
+    }
+    PREDICTION {
+        int id PK
+        int user_id FK
+        string crop_type
+        float predicted_yield
+        float confidence
+        string risk_level
+    }
+    CROP {
+        int id PK
+        string name
+        string season
+    }
+```
+
+### Key Tables
+
+- **users**: Stores authentication credentials, profile data, and farm metrics (e.g., `farm_size`, `preferred_crops`).
+- **predictions**: Stores user-submitted inputs (NPK, weather, soil type) and generated ML inference outputs (yield, confidence, risk level).
+
+### Data Flow & Migrations
+- **Data Flow**: Users submit predictions using acres. The frontend silently converts `area_acres` to `area_hectares` using a utility module. The backend persists the data, passes it to the Scikit-learn pipeline, and returns `kg/ha`, which is visually mapped back to `kg/acre` for the user.
+- **Migrations**: Database schema evolution is managed strictly via Alembic (`Flask-Migrate`). `flask db upgrade` is the definitive source of truth for applying schemas.
 
 ---
 
@@ -142,43 +213,66 @@ The hybrid inference pipeline combines XGBoost and Random Forest models to impro
 
 ---
 
+## Security Review
+
+### Hardened Configuration
+- **Environment Variables**: `SECRET_KEY` and `JWT_SECRET_KEY` are mandatory on startup (no insecure fallbacks). The backend fails safely if they are missing.
+- **CORS**: Tightly scoped to `FRONTEND_URL` rather than wildcard `*`.
+- **Rate Limiting**: Applied to authentication endpoints (e.g., 5/minute for login/register) to prevent brute-force attacks.
+- **Validation**: Strict server-side length validation applied on registration (e.g., passwords must be >= 8 chars).
+
+### Known Security Limitations
+- The `flask_limiter` uses the default memory storage. In a multi-worker production environment (e.g., Gunicorn), this is ineffective and allows requests to bypass limits. Redis is heavily recommended for production.
+- JWTs are currently stored in `localStorage`. Migrating to `httpOnly` cookies is planned.
+
+---
+
+## Design System
+
+The application relies on a custom "Modern Agriculture" CSS design system (`tokens.css` and `base.css`), entirely dropping external UI frameworks like Bootstrap.
+
+- **Palette**: 
+  - *Backgrounds*: Mist (`#F8FAF5`) for page backgrounds, Surface (`#FFFFFF`) for cards.
+  - *Primary*: Forest (`#2E7D32`) for primary buttons and sidebar backgrounds.
+  - *Secondary*: Fern (`#66BB6A`) for charts and hover states.
+- **Typography**: Display headings use `Fraunces` (serif), body text uses `Inter` (sans-serif), and numerical data uses `IBM Plex Mono`.
+- **Components**: 
+  - Forms use controlled inputs, explicit text colors (to prevent dark-mode OS overrides), and an 8px border radius.
+  - Custom UI elements include a `SoilStrip` component for visual soil health context, and floating `Tooltip` overlays for agricultural metrics.
+
+---
+
 ## Available Modules
 
 ### Authentication
-
 - User Registration
 - Login
 - JWT Authentication
 - Profile Management
-- Password Management
+- Password Management (with clear success/error feedback on change)
 
 ### Prediction
-
 - Crop Yield Prediction
 - Crop Recommendation
 - Confidence Score
 - Risk Level Assessment
 
 ### Weather
-
 - Current Weather
 - Weather Forecast
 - Mock Weather Support
 
 ### Analytics
-
 - Summary Dashboard
 - Regional Analytics
 - Seasonal Analytics
 - Crop Ranking
 
 ### Alerts
-
 - Risk Notifications
 - Alert Management
 
 ### History
-
 - Historical Predictions
 - User Prediction Records
 
@@ -186,46 +280,41 @@ The hybrid inference pipeline combines XGBoost and Random Forest models to impro
 
 ## REST API Overview
 
-### Authentication
+Base URL: `/api`
 
-- POST `/api/auth/register`
-- POST `/api/auth/login`
-- GET `/api/auth/profile`
-- PUT `/api/auth/profile`
-- POST `/api/auth/change-password`
+### Authentication (`/api/auth`)
+- `POST /register`: Register a new farmer account
+- `POST /login`: Login and receive JWT access token
+- `GET /profile`: Get authenticated user’s profile (Requires JWT)
+- `PUT /profile`: Update user profile (Requires JWT)
+- `POST /change-password`: Change password (Requires JWT)
 
-### Prediction
+### Prediction (`/api/predict`)
+- `POST /yield`: Submit inputs; returns yield, confidence, risk, and recommendations (Requires JWT)
+- `POST /crop`: Get top-3 crop recommendations for given soil/season (Requires JWT)
+- `GET /history`: Paginated prediction history with filters (Requires JWT)
+- `GET /{id}`: Full details of a specific prediction (Requires JWT)
 
-- POST `/api/predict/yield`
-- POST `/api/predict/crop`
-- GET `/api/predict/history`
-- GET `/api/predict/{id}`
+### Crops (`/api/crops`)
+- `GET /`: List all supported crops
+- `GET /{id}`: Crop by numeric ID
+- `GET /name/{name}`: Crop by name
 
-### Crops
+### Weather (`/api/weather`)
+- `GET /{location}`: Fetch current weather (Requires JWT)
+- `GET /forecast/{location}`: 5-day weather forecast (Requires JWT)
 
-- GET `/api/crops`
-- GET `/api/crops/{id}`
-- GET `/api/crops/name/{name}`
+### Analytics (`/api/analytics`)
+- `GET /region`: Regional yield stats by state/crop (Requires JWT)
+- `GET /seasonal`: Seasonal analytics Kharif/Rabi/Zaid (Requires JWT)
+- `GET /crop-ranking`: Top crops by avg yield for a region (Requires JWT)
+- `GET /summary`: User summary — totals, top crop, avg yield (Requires JWT)
 
-### Weather
+### Alerts (`/api/alerts`)
+- `GET /`: Retrieve risk notifications and alerts (Requires JWT)
 
-- GET `/api/weather/{location}`
-- GET `/api/weather/forecast/{location}`
-
-### Analytics
-
-- GET `/api/analytics/summary`
-- GET `/api/analytics/region`
-- GET `/api/analytics/seasonal`
-- GET `/api/analytics/crop-ranking`
-
-### Alerts
-
-- GET `/api/alerts`
-
-### Health
-
-- GET `/api/health`
+### Health (`/api/health`)
+- `GET /`: API health — status, DB connection, and ML model load status
 
 ---
 
@@ -246,22 +335,34 @@ The hybrid inference pipeline combines XGBoost and Random Forest models to impro
 
 ### Completed
 
-- Authentication System
-- Crop Yield Prediction
-- Crop Recommendation
+- Authentication System (hardened: rate limiting, server-side password validation, no insecure fallback secrets)
+- Crop Yield Prediction (with server-side input validation)
+- Crop Recommendation (with prediction-history gating)
 - Weather Integration
-- Analytics Dashboard
+- Analytics Dashboard (region-matching verified against edge cases: missing fields, whitespace, casing, multi-user aggregation)
 - Prediction History
 - JWT-Protected APIs
-- Responsive React Frontend
+- Responsive React Frontend with a custom design system
+- Automated Test Suite (19 backend pytest cases, 22 frontend Vitest cases)
+- Full manual QA pass via browser automation, covering the complete user flow end to end
+- File-by-file code review and a static security audit, both documented in `CODE_REVIEW.md`
 
 ### Planned Enhancements
 
 - Prediction Deletion API
 - Weather Response Caching
-- Automated Test Suite
 - Advanced Model Health Monitoring
-- Performance Optimization
+- Performance Optimization (current prediction inference takes approximately 30 seconds under local testing conditions)
+- Redis-backed rate limiting for multi-worker production deployments
+- Migration from localStorage-based JWT storage to httpOnly cookies
+
+---
+
+## Known Limitations & Missing Documentation
+
+- **Assumptions**: The system assumes the user understands the inputs require strict Metric units internally. The UI converts Acres to Hectares silently, which could cause confusion if interacting directly with the API.
+- **Risks**: The SQLite fallback database is still present for local testing, but MySQL is strongly recommended. Rate limiting relies on in-memory mapping which limits horizontal scaling.
+- **Refactoring Opportunities**: The dense rules engine in `predict_routes.py` (for crop suitability Euclidean math and weather fallbacks) could be extracted into a dedicated `services/` directory layer.
 
 ---
 
